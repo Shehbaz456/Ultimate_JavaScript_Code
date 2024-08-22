@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div style="display: flex; justify-content: center;
+        align-items: center; height: 100vh; width: 100%;">
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://media.gettyimages.com/id/1050069500/photo/ufc-lightweight-champion-khabib-nurmagomedov-poses-during-a-ceremonial-weigh-in-for-ufc-229.jpg?s=612x612&w=gi&k=20&c=xP_w-RC1zP9yJbpxSF6VcGORWcL96CPfsdC9CnNHX14=" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title center" style="color: blueviolet; text-align: center;">UFC Fighter Khabib</h5>
+                <h5 class="card-title center" id="statusval" style="color: red; text-align: center;">Stranger</h5>
+                
+                    <div style="display: flex; justify-content: center; align-items: center; padding-top: 17px; gap: 20px;"  >
+                        <a href="#" id="AdFribtn"  class="btn btn-primary">Add Friend</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       let istatus =  document.querySelector("#statusval");
+       let Fbtn = document.querySelector("#AdFribtn");
+        let check = 0
+
+       const getistatus = ()=>{
+        if(check == 0){
+            istatus.innerHTML = "Friends"
+            istatus.style.color = "green";
+            Fbtn.innerHTML = "Remove"
+            check = 1
+        }else{
+            istatus.innerHTML = "Stanger"
+            istatus.style.color = "red";
+            check = 0
+            Fbtn.innerHTML = "Add Friend"
+        }
+       }
+
+       AdFribtn.addEventListener("click",getistatus);
+
+    </script>
+
+
+
+
+
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

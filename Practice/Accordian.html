@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ section</title>
+    <script src="https://kit.fontawesome.com/6c484e20e6.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: rgb(255, 215, 255);
+            padding: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6rem;
+        }
+
+        .Accordian {
+            background-color: white;
+            padding: 8px 26px;
+            margin-bottom: 16px;
+            border-radius: 4px;
+            box-shadow: 1px 1px 5px rgb(255, 205, 255);
+            cursor: pointer;
+        }
+
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .icon {
+            margin-right: 16px;
+            transition: transform 0.2s;
+        }
+        .icon.active {
+            transform: rotate(180deg);
+        }
+        .answer{
+            color: #666;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <h2>FAQ's</h2>
+    <div class="Accordian">
+        <div class="question">
+            <h4>Lorem sdd ipsum dolor sit amet consectetur.</h4>
+            <i class="icon fa-solid fa-caret-down"></i>
+        </div>
+        <div class="answer">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure at quaerat eius asperiores quae vel, labore
+                praesentium consequuntur, in omnis dolorum! Odit recusandae rerum voluptatem adipisci? Cumque impedit
+                numquam beatae?</p>
+        </div>
+    </div>
+    <div class="Accordian">
+        <div class="question">
+            <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+            <i class="icon  fa-solid fa-caret-down"></i>
+        </div>
+        <div class="answer">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure at quaerat eius asperiores quae vel, labore
+                praesentium consequuntur, in omnis dolorum! Odit recusandae rerum voluptatem adipisci? Cumque impedit
+                numquam beatae?</p>
+        </div>
+    </div>
+    <div class="Accordian">
+        <div class="question">
+            <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+            <i class="icon fa-solid fa-caret-down"></i>
+        </div>
+        <div class="answer">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure at quaerat eius asperiores quae vel, labore
+                praesentium consequuntur, in omnis dolorum! Odit recusandae rerum voluptatem adipisci? Cumque impedit
+                numquam beatae?</p>
+        </div>
+    </div>
+
+    <script>
+        const accordians = document.querySelectorAll(".Accordian");
+        accordians.forEach(accordian => {
+            const icon = accordian.querySelector(".icon");
+            const answer = accordian.querySelector(".answer");
+            
+            accordian.addEventListener("click",()=>{
+                // icon.classList.toggle("active");
+                // answer.classList.toggle("active");
+                if(icon.classList.contains('active')){
+                    icon.classList.remove("active");
+                    answer.style.maxHeight =null
+                }else{
+                    icon.classList.add("active");
+                    answer.style.maxHeight = answer.scrollHeight+"px"
+                }
+            })
+        })
+
+        // const acco = document.querySelector(".Acco");
+        // const icon = document.querySelector(".ico");
+        // const ans = document.querySelector(".ans");
+        // acco.addEventListener("click",()=>{
+        //     icon.classList.toggle("active");
+        //     ans.classList.toggle("active");
+        // });
+
+        // for (let i = 0; i < 3; i++) {
+        //     accordians[i].addEventListener("click",fun);
+        //     function fun(){
+        //         answer[i].classList.add('active');
+        //         icons[i].classList.add('active')
+        //     }
+        // }
+        
+    </script>
+</body>
+
+</html>

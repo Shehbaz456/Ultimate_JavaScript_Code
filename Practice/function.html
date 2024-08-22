@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice link colour task</title>
+</head>
+
+<body>
+
+    <h1>hello</h1>
+    <script>
+        //     function sum(a,b) {
+        //         console.log(a+b);
+        //         return a+b;
+        //     }
+        //    let result = sum(12,4);
+        //    console.log(result);
+
+        // Arro Funtion
+        // let sum = (a,b) => {
+        //     let arr = ["Shehbaz","Dildar","Ultimo"]
+        //     for (let i = 0; i < arr.length; i++) {
+        //         console.log("my name is ",arr[i])
+        //     }
+        //     return a+b;
+        // }
+        // console.log(sum(2,4));
+
+
+        // Callback Function
+        // function greet(name,callback){
+        //     console.log("Hi "+ ' ' + name);
+        //     callback()
+        // }
+        // function callMe(){
+        //     console.log("I am callback function");
+        // }
+        // // Passing function as anargument 
+        // greet('Peter', callMe);
+
+
+        // setTimeout( function(params){
+        //     console.log("this will execute later");
+
+        // },5000)
+
+        // Callback Hell
+        // - callback function ke andar ek or callback function -
+        function getCheese(callback) {
+            setTimeout(() => {
+                const cheese = "🍰"
+                console.log("here is cheese", cheese);
+                callback(cheese)
+            }, 2000)
+        }
+
+        function makeDough(cheese, callback) {
+            setTimeout(() => {
+                const dough = cheese + "💚";
+                console.log("here is the dough", dough);
+                callback(dough);
+            }, 2000)
+        }
+
+        function makePizza(dough, callback) {
+            setTimeout(() => {
+                const pizza = dough + "🍕";
+                console.log("here is the pizza", pizza);
+                callback(pizza);
+            }, 2000)
+        }
+        // callback hell
+        // - callback function ke andar ek or callback function.
+        getCheese((cheese) => {
+            makeDough(cheese, (dough) => {
+                makePizza(dough, (pizza) => {
+                    console.log("I got my pizza pizza", pizza);
+                })
+            })
+
+        });
+        console.log("hello ooo ");
+
+    </script>
+</body>
+
+</html>

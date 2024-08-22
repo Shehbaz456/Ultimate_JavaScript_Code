@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            background-color: teal;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 450px;
+            padding: 10px;
+            row-gap: 10px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .round-border{
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="box" id="box-1">box-1</div>
+        <div class="box random" id="box-2">box-2</div>
+        <div class="box" id="box-3">box-3</div>
+        <div class="box" id="box-4">box-4</div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut cum voluptate totam dolores vitae eos, molestias unde praesentium minus qui distinctio hic nam sequi saepe quos recusandae quis maxime libero.</p>
+
+    <script>
+        // let mybody = document.body;
+        // console.log(mybody)
+
+        // let box_id = document.getElementById("box-3");
+        // box_id.style.background="yellow";
+
+        // let box = document.getElementsByClassName("box");
+        // console.log(box);
+
+        // let divs = document.getElementsByTagName('p');
+        // console.log(divs);
+
+        // let random = document.querySelectorAll(" .container .random");
+        // console.log(random)
+
+
+        // manipluation html
+        const box1 = document.getElementById('box-1');
+        box1.innerHTML = "<h4>Hello World</h4>" 
+        box1.classList.add('round-border');
+
+
+        let boxes = document.getElementsByClassName('box');
+        for (let i = 0; i < boxes.length; i++) {
+            boxes[i].classList.add('round-border');
+        }
+        box1.classList.remove('round-border');
+
+
+        const para = document.createElement('p');
+        para.innerText = "this is brand new";
+        para.classList.add('box','round-border');
+        const container = document.getElementById("container");
+        
+        container.appendChild(para);
+    </script>
+</body>
+</html>   
+
